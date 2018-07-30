@@ -1,0 +1,11 @@
+{
+  "name": "mdx-deck-example",
+  "license": "MIT",
+  "devDependencies": {
+    "mdx-deck": "^1.0.1"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  }
+}
