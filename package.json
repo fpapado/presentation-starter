@@ -2,10 +2,14 @@
   "name": "mdx-deck-example",
   "license": "MIT",
   "devDependencies": {
-    "mdx-deck": "^1.0.1"
+    "mdx-deck": "^1.6.9",
+    "mdx-deck-code-surfer": "^0.2.1",
+    "raw-loader": "^0.5.1"
   },
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build deck.mdx",
+    "deploy": "npx now",
+    "alias": "npx now alias"
   }
 }
