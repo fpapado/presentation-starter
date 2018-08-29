@@ -9,6 +9,7 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build deck.mdx",
+    "release": "npm run deploy && npm run alias",
     "deploy": "npx now",
     "alias": "npx now alias"
   }
