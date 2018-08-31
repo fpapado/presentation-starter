@@ -9,8 +9,8 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build deck.mdx",
-    "release": "cp assets/ dist/ && cp now.json dist/ && cd dist && npm run deploy && npm run alias",
-    "deploy": "npx now",
+    "release": "npm run build && cp -r assets/ dist/ && cp now.json dist/ && cd dist && npm run deploy && npm run alias",
+    "deploy": "npx now ./dist",
     "alias": "npx now alias"
   }
 }
