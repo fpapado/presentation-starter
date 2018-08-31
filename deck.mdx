@@ -1,15 +1,20 @@
 import { Image } from 'mdx-deck'
+import { CodeSurfer } from "mdx-deck-code-surfer"
 
 # Github Bots, Talks, and long-term Projects
 
 ---
 
+# The bots were us all along
+
+---
+
 # A story
 
 ---
 
 # A story
-In particular, a story of learning to make Github bots, using them for a hobby, and circling back to work.
+In particular, a story of learning to make Github bots, using them for a hobby, exploring, and bringing things back.
 
 ---
 
@@ -17,16 +22,28 @@ In particular, a story of learning to make Github bots, using them for a hobby, 
 
 ---
 
-Insert photo from May, Probot
+# Some weekend in April...
 
 ---
 
-The potential for Bullshit
+<img src="/assets/probot_home.png" />
+
+Source:
+[https://probot.github.io/](https://probot.github.io/)
 
 ---
 
-Show sample
+<img src="/assets/probot_docs.png" />
 
+The **potential for Bullshit**™ :ok_hand:
+
+---
+
+<img src="/assets/probot_hello.png" />
+
+```notes
+This page has everything I like on it.
+```
 
 ---
 
@@ -37,17 +54,23 @@ Show sample
 
 And all three of these things, had a large impact on what I've done with it.
 
+```notes
 Steps important, not just an API wrapper. Pitfalls, warnings, best practices.
 
 Can't wrap everything with an API at once.
 Backfill with docs.
 
 Docs PR
+```
 
 ---
 
-# The API
-TODO: Insert code of Probot docs
+<CodeSurfer
+  code={require("!raw-loader!./assets/probot-hello.js")}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+/>
 
 ---
 
@@ -65,7 +88,9 @@ I read through the guide, built a simple issue logger, called it a day...
 
 ---
 
-Show photo on Twitter
+<img src="/assets/twitter_want.png" />
+
+^ Person I follow on twitter
 
 ---
 
@@ -75,64 +100,81 @@ I can build it!
 
 --- 
 
-# Making a bot v2
+---
+
+# Making the bot
+
+Github + Release event + Twitter
+
+[https://github.com/fpapado/org-release-announcer-twitter](https://github.com/fpapado/org-release-announcer-twitter)
 
 ---
 
+# Problems with composition
+
+Some things bothered me:
+- What if I want to announce on Slack?
+- How do people set up the environment vars?
+
+There has to be a way to compose better!
+
+```notes
 One of the things I have built, where I can trace a line between ideas
-
----
-There has to be a way to compose better
-Announce elsewhere?
-Keys?
----
-
-Bothered me
-Fri -> Sat
----
-
-I lost sleep
+```
 
 ---
 
-Sat: realisation
+# Friday
 
-Fotis' bs test for composition:
+I lost some sleep...
 
-If this were Open Source, would extending it be a PR?
+---
 
+# Saturday: realisation
+
+Tracing a line from Probot's focus on docs...
+
+---
+
+Fotis' bs composition test:
+
+**"If this were Open Source, would extending it be a PR?"**
+
+```notes
 (Open-closed but for working with people)
+```
 
 ---
 
-Sat: another realisation
-Middle ground inspired by Probot itself
-Docs to DIY those parts!
-More pleasurable and efficient
+# Another realisation
+
+- Use docs to cover the DIY parts!
+- I like writing; it is pleasant and efficient.
 
 ---
 
-Glitch, env vars, inspect source "full-stack"
+# Glitch: "full-stack inspect source"
+
+[https://glitch.com/~release-announcer-twitter](https://glitch.com/~release-announcer-twitter)
+
+```notes
+Side-effect of docs:
+Did not want to go back and change it.
+```
 
 ---
 
-TODO: result
+<img src="/assets/twitter_response.png" />
 
 :blush: :blush: :blush:
 
 ---
 
-Side-effect of docs:
-Did not want to go back and change it.
-
-
---- 
-
 # Chapter 3: A long-term Project
 
 ---
 
-# A month later...
+# Three months later...
 
 ---
 
@@ -142,103 +184,141 @@ Did not want to go back and change it.
 
 # The FIBA team
 
+---
+
+<img src="/assets/fiba_stack.png" />
+
+Our glorious set of stacks
 
 ---
 
-<Image src="/assets/fiba_stack.png" />
+<img src="/assets/fiba_stack.png" />
 
-Credits: The FIBA team
-
----
-
-How to distribute among teams
-Simple to install
-Configurable
-Bot-of-bots
-Simple to add a new one
-    (shouldn't have to write...)
-
-(An Open Source mindset, if you will)
+Plus Github...
 
 ---
 
-# Problem/Enabler: Make the thing, and make sure people can use the thing
+# Some Github stuff
+- Heroku deploy previews
+- PR monitor counter
+- Build stats
 
 ---
 
-# Enabler: Tech stack +- 2
+# Where's the deployment button?
+<img src="/assets/deploy_before.png" />
 
 ---
 
-TODO: list things here
+<Image src="/assets/hello_spaceship.gif" />
 
-Probot moves to TS -> we use TS!
-PR on Probot -> Open/discuss PRs for the idea
+I can build it!
 
 ---
 
-# Docs-first
-Picking up where I'd left
+# Design goals
+- How to distribute among teams
+- Simple to install
+- Configurable
+- Bot-of-bots
+- Simple to add a new one (only write and test what you need)
+
+"What if this was Open Source?"
+
+---
+
+# Opportunities for learning
+- Make the thing, and make sure people can use the thing
+- Tech stack +- 2
+- Data-first
+- Documentation-driven
+
+I could trace a clear line from the previous interactions to this one.
+
+```notes
+- Probot moved to TS, and we were using it! Validation
+- Docs is where I had left things off, so I can pick it up again
+- PR on probot to discuss
+
+Turns out, formulating a bit differently gave me motivation.
+In terms of the project, a side quest :)
+```
 
 ---
 
 # Embarking on your own side-quest
+
+```notes
 Exploring in each direction, bring back things, leave as one-off, and maybe go horribly and the dragon will eat you.
+```
 
 ---
 
-Turns out, formulating a bit differently gave me motivation.
-In terms of the project, a side quest :)
+# The result: In action
+
+<img src="/assets/deploy_after.png" />
 
 ---
 
-The result
+# The result: Config
+
+Let's look at configs from a repo!
 
 ---
 
-Using:
-Install one bot,
-Config file
+# The result: Adding bots
+
+- Safe core, unsafe world (Mostly, because only validation is that)
+- Similar to what we do in other parts of the code, with some explorations.
+
+```ts
+interface Responder<Cfg extends {}> {
+  /* Unique responder name */
+  name: string;
+
+  /* List of Github webhooks to respond to */
+  webhooks: ValidWebhook[];
+
+  /* The function to run after the webhook */
+  respond: (config: Cfg) => (context: Context) => Promise<any>;
+
+  /* The default config, merged with the runtime config */
+  defaultConfig?: Partial<Cfg>;
+
+  /* A validator that asserts that the runtime config matches the Config */
+  validate?: ({}) => Either<any, Cfg>;
+}
+```
 
 ---
 
-Creating:
-Mostly-functional core, imperative shell
-Safe core, unsafe world
-(Mostly, because only validation is that)
+# Safe core, unsafe world
+
+- Be confident that if you add a bot, you only need to test your own stuff
+- Centralised reporting, automatically linked to our team's infra
 
 ---
 
-Data structure
-Action,
-Validation
+Find the code at
+[https://github.com/futurice/fiba-3x3-bot](https://github.com/futurice/fiba-3x3-bot)
 
-Be confident that if you add it, you only need to test your own stuff
-Consistent reporting, as a team.
-
----
-
-Find code at...
 Open source soon?
 
 ---
 
-To summarise:
-- Try something
-- Talk to people
-- Remix ideas
-- Document up-front
-- Let things rest
-- Go to step whatever
-- Have fun
+# Summary: A guide to exploring
+1. Try something
+2. Talk to people
+3. Remix ideas
+4. Document what you can't automate
+5. Document anyway :)
+6. **Let yourself rest**
+7. Tell someone about it
+8. Go to step whatever
+9. (Bonus) make a presentation
 
 ---
 
-Influences
+# Thanks!
 
-Tests
-Bullshit
-API
-Github
-Writing Docs up-front
-Prompt
+[https://bots-talks-projects.now.sh/#0](https://bots-talks-projects.now.sh/#0)
