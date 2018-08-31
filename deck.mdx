@@ -1,5 +1,4 @@
 import { Image } from 'mdx-deck'
-import { CodeSurfer } from "mdx-deck-code-surfer"
 
 # Github Bots, Talks, and long-term Projects
 
@@ -65,12 +64,19 @@ Docs PR
 
 ---
 
-<CodeSurfer
-  code={require("!raw-loader!./assets/probot-hello.js")}
-  lang="javascript"
-  showNumbers={false}
-  dark={false}
-/>
+```js
+module.exports = app => {
+    app.on('issues.opened', async context => {
+        // 'context' extracts information from the event, which can be passed to
+        // GitHub API calls. This will return:
+        //   {owner: 'yourname', repo: 'yourrepo', number: 123, body: 'Hello World!}
+        const params = context.issue({body: 'Hello World!'})
+
+        // Post a comment on the issue
+        return context.github.issues.createComment(params)
+    })
+}
+```
 
 ---
 
